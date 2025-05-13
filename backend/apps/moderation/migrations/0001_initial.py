@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('core', '0001_initial'),
+        ('administration', '0001_initial'),
     ]
 
     operations = [
@@ -22,8 +22,8 @@ class Migration(migrations.Migration):
                 ('last_name', models.CharField(max_length=30)),
                 ('email', models.EmailField(max_length=254)),
                 ('phone', models.CharField(max_length=15)),
-                ('faculty', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='core.faculty')),
-                ('organization', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='core.organization')),
+                ('faculty', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='administration.faculty')),
+                ('organization', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='administration.organization')),
             ],
         ),
     ]

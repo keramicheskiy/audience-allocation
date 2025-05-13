@@ -1,17 +1,7 @@
+
 from django.db import models
 
-from apps.auditoriums.models import Auditorium
-from apps.employees.models import Employee
-
-
-# Create your models here.
-
-
-class Subject(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return f"Subject(id: {self.id}, name: {self.name})"
+from apps.moderation.models import Employee
 
 
 class Lecture(models.Model):

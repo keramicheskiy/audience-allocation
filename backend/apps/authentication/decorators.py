@@ -9,7 +9,6 @@ def authenticated(func):
         token = request.COOKIES.get('token')
         if not token or not Token.objects.filter(token=token).exists():
             return Response(status=status.HTTP_401_UNAUTHORIZED)
-
         func(request, *args, **kwargs)
 
     return wrapper

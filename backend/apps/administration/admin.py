@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.core import models
+from apps.administration import models
 
 admin.site.register(models.Faculty)
 admin.site.register(models.Organization)

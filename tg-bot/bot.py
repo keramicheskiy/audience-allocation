@@ -9,7 +9,7 @@ dotenv_path = settings.BASE_DIR / env_file
 load_dotenv(dotenv_path)
 
 TOKEN = os.environ.get("TG_TOKEN")
-ADMIN_ID = os.environ.get("ADMIN_ID")
+ADMINS = os.environ.get("ADMINS").split(' ')
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 
 

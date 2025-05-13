@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from . import forms
 import requests
 from frontend.settings import BACKEND_URL
+from ..home.decorators import logged_in
 
 
 def register(request):
@@ -30,7 +31,8 @@ def register(request):
 
 def login(request):
     if request.method == 'GET':
-        return render(request, "authentication/login.html", context={"form": forms.LoginForm})
+        return render(request, "authentication/login.html",
+                      context={"form": forms.LoginForm})
     elif request.method == 'POST':
         form = forms.LoginForm(request.POST)
         if form.is_valid():
@@ -50,6 +52,7 @@ def login(request):
         return HttpResponse(form.errors, status=400)
 
 
+@logged_in
 def verify_token(request):
     response = requests.post(url=BACKEND_URL + "/auth/verify-token",
                              headers={'Authorization': f'Token {request.Cookies.get("Token")}'})

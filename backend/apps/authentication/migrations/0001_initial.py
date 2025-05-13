@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('auditoriums', '0001_initial'),
+        ('teachers', '0001_initial'),
         ('auth', '0012_alter_user_first_name_max_length'),
     ]
 
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('patronymic', models.CharField(blank=True, max_length=50, null=True)),
                 ('last_name', models.CharField(blank=True, max_length=50, null=True)),
                 ('booking_limit', models.PositiveIntegerField(blank=True, null=True)),
-                ('available_auditoriums', models.ManyToManyField(blank=True, null=True, to='auditoriums.auditorium')),
+                ('available_auditoriums', models.ManyToManyField(blank=True, null=True, to='teachers.auditorium')),
                 ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.group', verbose_name='groups')),
                 ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.permission', verbose_name='user permissions')),
             ],

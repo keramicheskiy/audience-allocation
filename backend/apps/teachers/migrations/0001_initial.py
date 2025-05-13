@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('core', '0001_initial'),
+        ('administration', '0001_initial'),
     ]
 
     operations = [
@@ -20,9 +20,9 @@ class Migration(migrations.Migration):
                 ('number', models.CharField(max_length=10)),
                 ('size', models.IntegerField(default=0)),
                 ('description', models.TextField(default='')),
-                ('equipment', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='core.equipment')),
-                ('location', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.location')),
-                ('organization', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.organization')),
+                ('equipment', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='administration.equipment')),
+                ('location', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='administration.location')),
+                ('organization', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='administration.organization')),
             ],
         ),
     ]

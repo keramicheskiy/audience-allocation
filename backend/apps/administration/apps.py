@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AuditoriumsConfig(AppConfig):
+class CoreConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.auditoriums'
+    name = 'apps.administration'

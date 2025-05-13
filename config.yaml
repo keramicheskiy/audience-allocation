@@ -1,0 +1,15 @@
+#
+#storage:
+#  type: memory  # или sqlite, или postgres
+
+
+#TODO СДЕЛАТЬ ЭТУ ГАДОСТЬ
+
+admin_restrictions:
+  max_hours_per_teacher:
+    Sweetie.77@mail.ru: 10
+    petrov: 5
+
+  allowed_rooms_per_teacher:
+    ivanov: ["101", "102"]
+    petrov: ["201"]

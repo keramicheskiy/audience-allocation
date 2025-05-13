@@ -1,6 +1,12 @@
 from django import forms
 from django.core.validators import RegexValidator
 
+ROLES = (
+    ('admin', 'Администратор'),
+    ('moderator', 'Модератор'),
+    ('teacher', 'Преподаватель'),
+)
+
 
 class RegistrationForm(forms.Form):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name'}))
@@ -16,6 +22,8 @@ class RegistrationForm(forms.Form):
                                    r'[A-Za-z0-9_]*',
                                    message="Password should consist of letters, numbers, underscores",
                                )])
+    role = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control', 'id': 'role'}),
+                             choices=ROLES)
 
 
 class LoginForm(forms.Form):
